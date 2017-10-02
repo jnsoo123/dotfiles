@@ -1,16 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ADSI05/.oh-my-zsh
-export ACCESS_TOKEN=EAABnnuJNEHYBADiVOh4HZBQ66adn5w4ZA5W8BmXdFs30tLhA7Pv1zCpkXlnq4mCDvgTA6q9477nHM82KxuiA1ZCFPPZCkVgextuVap3QF9PIlciQiyLZAQryEhowWwAXFAbKZCQFVSLO0r9czylW6j12ZCbxRV85gm8ILqmDOd2YwZDZD
-export APP_SECRET=117d0b859bfd16d7ea1b4b6163fbb78d
-export VERIFY_TOKEN=testtoken
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
-
-ruby ~/Documents/Rails/pantry_team.rb
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
