@@ -1,5 +1,5 @@
 let mapleader = ","
-set re=1 
+set re=1
 nmap <Leader>f :FZF<cr>
 nmap <Leader>w :w<cr>
 nmap <Leader>q :q<cr>
@@ -13,7 +13,7 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-map <F2> :Copen 
+map <F2> :Copen
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 noremap <leader>1 1gt
@@ -70,7 +70,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/' }
 Plugin 'tpope/vim-surround'
 Plugin 'nelstrom/vim-mac-classic-theme'
-Plugin 'gorodinskiy/vim-coloresque'
+"Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-airline/vim-airline'
 Plugin 'flazz/vim-colorschemes'
@@ -80,8 +80,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'slim-template/vim-slim.git' 
-Plugin 'mileszs/ack.vim'      
+Plugin 'slim-template/vim-slim.git'
+Plugin 'mileszs/ack.vim'
+Plugin 'rakr/vim-two-firewatch'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,13 +91,19 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 syntax enable
-" colorscheme vividchalk
 
-let g:solarized_termtrans = 1
-let g:solarized_termcolors=256
-colorscheme solarized
+let g:onedark_termcolors=16
+colorscheme onedark
 set background=dark
 
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"set background=dark
+
+"set cursorline
+"highlight CursorLine cterm=underline ctermbg=NONE
+"highlight CursorLine ctermbg=Black
 " To ignore plugin indent changes, instead use:
 filetype plugin on
 " Brief help
@@ -108,9 +115,10 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "set cursorline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
+"let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
 set laststatus=2
-let g:airline_theme='luna'
+"let g:airline_theme='badcat'
+let g:airline_theme='onedark'
 
 let g:rspec_command = "Dispatch bin/rspec {spec}"
