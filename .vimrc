@@ -83,6 +83,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'rakr/vim-two-firewatch'
+Plugin 'sheerun/vim-polygot'
+Plugin 'trevordmiller/nova-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,14 +94,47 @@ set shiftwidth=2
 set expandtab
 syntax enable
 
+" Firewatch Theme START
+"set termguicolors
+"set background=dark " or light if you prefer the light version
+"let g:two_firewatch_italics=0
+"colo two-firewatch
+
+"let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
+" Firewatch Theme END
+
+" OneDark Theme START
 let g:onedark_termcolors=16
 colorscheme onedark
 set background=dark
+let g:airline_theme='onedark'
+" OneDark Theme END
 
+" Aldiun Theme
+"let g:onedark_termcolors=16
+"colorscheme alduin
+"set background=dark
+"let g:airline_theme='twofirewatch'
+" END
+
+"colorscheme nova
+"let g:airline_theme='onedark'
+
+" Gruvbox
+"colorscheme dracula
+"colorscheme gruvbox
+"set background=dark
+"let g:airline_theme='twofirewatch'
+"let g:airline_theme='atomic'
+" End
+
+" Solarized Theme
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "set background=dark
+"let g:airline_theme='luna'
+" End
 
 "set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE
@@ -117,8 +152,8 @@ filetype plugin on
 "set cursorline
 "let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 set laststatus=2
 "let g:airline_theme='badcat'
-let g:airline_theme='onedark'
 
 let g:rspec_command = "Dispatch bin/rspec {spec}"
