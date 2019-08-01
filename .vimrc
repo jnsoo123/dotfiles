@@ -10,7 +10,7 @@ nmap <Leader>n :NERDTree<cr>
 nmap <Leader>/ :s/^/#/g<cr>
 nmap <Leader>\ :s/^//g<cr>
 map <Leader>r :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>s :set hls!<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <F2> :Copen
@@ -33,6 +33,8 @@ set noswapfile
 
 filetype off                  " required
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 0
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -73,7 +75,6 @@ Plugin 'nelstrom/vim-mac-classic-theme'
 "Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-airline/vim-airline'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'airblade/vim-gitgutter'
@@ -83,8 +84,17 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'rakr/vim-two-firewatch'
-Plugin 'sheerun/vim-polygot'
 Plugin 'trevordmiller/nova-vim'
+Plugin 'kaicataldo/material.vim'
+Plugin 'szorfein/fromthehell.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'Yggdroot/indentLine'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,6 +103,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 syntax enable
+
+" For indentLine
+let g:indentLine_setColors = 0
+let g:indentLine_color_term = 239
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" END
 
 " Firewatch Theme START
 "set termguicolors
@@ -104,10 +120,10 @@ syntax enable
 " Firewatch Theme END
 
 " OneDark Theme START
-let g:onedark_termcolors=16
-colorscheme onedark
-set background=dark
-let g:airline_theme='onedark'
+"let g:onedark_termcolors=16
+"colorscheme onedark
+"set background=dark
+"let g:airline_theme='onedark'
 " OneDark Theme END
 
 " Aldiun Theme
@@ -117,24 +133,60 @@ let g:airline_theme='onedark'
 "let g:airline_theme='twofirewatch'
 " END
 
+" NOVA Theme
 "colorscheme nova
-"let g:airline_theme='onedark'
+"let g:airline_theme='nova'
+" END
+
+" Palenlight Theme
+set termguicolors
+set background=dark
+colorscheme palenight
+let g:airline_theme='onedark'
+" END
+
 
 " Gruvbox
 "colorscheme dracula
 "colorscheme gruvbox
 "set background=dark
 "let g:airline_theme='twofirewatch'
-"let g:airline_theme='atomic'
+"let g:airline_theme='gruvbox'
 " End
+
+"Nord
+"colorscheme nord
+"let g:airline_theme='nord'
+"end
 
 " Solarized Theme
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "colorscheme solarized
-"set background=dark
-"let g:airline_theme='luna'
+"set background=light
+"let g:airline_theme='solarized'
 " End
+
+" Material Theme
+"set termguicolors
+"set background=dark
+"syntax enable
+"colorscheme material
+"let g:material_theme_style='palenlight'
+"let g:airline_theme = 'material'
+" END
+
+" Monokai Theme
+"colorscheme monokai
+"let g:airline_theme='badcat'
+" END
+
+" PaperColor Theme
+"set t_Co=256   " This is may or may not needed.
+"set background=light
+"colorscheme PaperColor
+"let g:airline_theme='papercolor'
+" END
 
 "set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE
@@ -157,3 +209,13 @@ set laststatus=2
 "let g:airline_theme='badcat'
 
 let g:rspec_command = "Dispatch bin/rspec {spec}"
+set encoding=UTF-8
+
+" Vim-DevIcons
+let g:WebDevIconsUnicodeDecorateFolderNodes=1
+let g:DevIconsEnableFoldersOpenClose=1
+
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif

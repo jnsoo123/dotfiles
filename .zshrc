@@ -10,7 +10,8 @@ export ZSH=/Users/neil.soo/.oh-my-zsh
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 #ZSH_THEME="gnzh"
 #ZSH_THEME="rkj-repos"
-ZSH_THEME="refined"
+#ZSH_THEME="refined"
+ZSH_THEME="pi/pi"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -104,17 +105,8 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
-# paths
-alias pathtosg='cd && cd Documents/Rails/school-guardian'
-alias pathtotahms='cd && cd Documents/Rails/tahms_asia'
-alias pathtosumo='cd && cd Documents/Rails/IZUMO'
-
 # shortcuts
 alias cleanproject='git reset --hard && git clean -f'
 
 # servers
-alias tahms_staging='ssh devgru@54.199.141.145 -A'
-alias tahms_web1='ssh devgru@52.193.159.247 -A'
-alias tahms_web2='ssh devgru@52.196.113.17 -A'
-alias notes='cd && cd Documents/Notes && vi notes.md'
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
