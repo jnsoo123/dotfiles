@@ -139,19 +139,19 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
 
 " Palenlight Theme
-set termguicolors
-set background=dark
-colorscheme palenight
-let g:airline_theme='onedark'
-" END
+"set termguicolors
+"set background=dark
+"colorscheme palenight
+"let g:airline_theme='onedark'
+"" END
 
 
 " Gruvbox
 "colorscheme dracula
-"colorscheme gruvbox
-"set background=dark
+colorscheme gruvbox
+set background=dark
 "let g:airline_theme='twofirewatch'
-"let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox'
 " End
 
 "Nord
@@ -163,7 +163,7 @@ let g:airline_theme='onedark'
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "colorscheme solarized
-"set background=light
+"set background=dark
 "let g:airline_theme='solarized'
 " End
 
