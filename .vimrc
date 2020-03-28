@@ -79,7 +79,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'mileszs/ack.vim'
@@ -94,6 +93,17 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'Rigellute/rigel'
+Plugin 'joshdick/onedark.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'eemed/sitruuna.vim'
+Plugin 'fcpg/vim-fahrenheit'
+Plugin 'notpratheek/vim-luna'
+Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'hzchirs/vim-material'
+Plugin 'micke/vim-hybrid'
+Plugin 'altercation/vim-colors-solarized'
 
 
 " All of your Plugins must be added before the following line
@@ -105,7 +115,7 @@ set expandtab
 syntax enable
 
 " For indentLine
-let g:indentLine_setColors = 0
+let g:indentLine_setColors = 1
 let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
@@ -115,12 +125,13 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "set background=dark " or light if you prefer the light version
 "let g:two_firewatch_italics=0
 "colo two-firewatch
-
+"
 "let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 " Firewatch Theme END
 
 " OneDark Theme START
 "let g:onedark_termcolors=16
+"set termguicolors
 "colorscheme onedark
 "set background=dark
 "let g:airline_theme='onedark'
@@ -142,12 +153,11 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "set termguicolors
 "set background=dark
 "colorscheme palenight
-"let g:airline_theme='onedark'
+"let g:airline_theme='palenight'
 "" END
 
-
 " Gruvbox
-"colorscheme dracula
+set termguicolors
 colorscheme gruvbox
 set background=dark
 "let g:airline_theme='twofirewatch'
@@ -160,20 +170,27 @@ let g:airline_theme='gruvbox'
 "end
 
 " Solarized Theme
+"syntax enable
+"set termguicolors
+"set background=dark
+"colorscheme solarized
+"let g:airline_theme='luna'
+" END
+
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "set background=dark
-"let g:airline_theme='solarized'
+"let g:airline_theme='luna'
 " End
 
 " Material Theme
-"set termguicolors
-"set background=dark
-"syntax enable
-"colorscheme material
-"let g:material_theme_style='palenlight'
-"let g:airline_theme = 'material'
+"gset termguicolors
+"gset background=dark
+"gsyntax enable
+"gcolorscheme material
+"glet g:material_theme_style='ocean'
+"glet g:airline_theme = 'material'
 " END
 
 " Monokai Theme
@@ -183,10 +200,41 @@ let g:airline_theme='gruvbox'
 
 " PaperColor Theme
 "set t_Co=256   " This is may or may not needed.
-"set background=light
+"set background=dark
 "colorscheme PaperColor
-"let g:airline_theme='papercolor'
+"let g:airline_theme='luna'
 " END
+
+" Hybrid
+"set termguicolors
+"set background=dark
+"colorscheme hybrid
+"let g:airline_theme='hybrid'
+" END
+
+" Ayu
+"set termguicolors
+"let ayucolor='light'
+"let ayucolor='dark'
+"let ayucolor='mirage'
+"colorscheme ayu
+" END
+
+" Material
+"set termguicolors
+"let g:material_style='oceanic'
+"set background=dark
+"colorscheme vim-material
+"let g:airline_theme='material'
+"highlight clear jsThis
+"highlight clear jsConditional
+"highlight clear jsReturn
+"highlight clear Comment
+" END
+"set termguicolors
+"colorscheme rigel
+"let g:rigel_airline = 1
+"let g:airline_theme = 'rigel'
 
 "set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE

@@ -4,38 +4,15 @@
 
 module.exports = {
   config: {
-    hyperBorder: {
-      borderColors: ['#636363', '#a2ab58'],
-      borderWidth: '3px'
-    },
-
-    MaterialTheme: {
-      // Set the theme variant,
-      // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
-      theme: 'Palenight',
-
-      // [Optional] Set the rgba() app background opacity, useful when enableVibrance is true
-      // OPTIONS: From 0.1 to 1
-      backgroundOpacity: '1',
-      //enableVibrance: true,
-
-      // [Optional] Set the accent color for the current active tab
-      //accentColor: '#0099F7',
-
-      // [Optional] Mac Only. Need restart. Enable the vibrance and blurred background
-      // OPTIONS: 'dark', 'ultra-dark', 'bright'
-      // NOTE: The backgroundOpacity should be between 0.1 and 0.9 to see the effect.
-      vibrancy: 'dark'
-    },
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Iosevka Nerd Font, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"MesloLGL Nerd Font", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -50,7 +27,7 @@ module.exports = {
     letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(255,0,0,1)',
+    cursorColor: 'rgba(248,28,229,0.8)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -161,6 +138,11 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    hyperBorder: {
+      borderColors: ['#98971a', '#d79921'],
+      borderWidth: '4px'
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -170,13 +152,10 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-gruvbox-dark',
-    'hyperline',
-    'hypercwd',
-    'hyper-tabs-enhanced',
-    'hyper-search',
-    'hypergoogle',
     'hyperborder',
+    'hyper-gruv',
+    'hyper-tabs-enhanced',
+    'hyper-search'
   ],
 
   // in development, you can create a directory under

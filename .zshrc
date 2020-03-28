@@ -2,8 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/neil.soo/.oh-my-zsh
-
+export ZSH=/Users/JSoo/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -11,8 +10,11 @@ export ZSH=/Users/neil.soo/.oh-my-zsh
 #ZSH_THEME="gnzh"
 #ZSH_THEME="rkj-repos"
 #ZSH_THEME="refined"
-ZSH_THEME="pi/pi"
-
+#ZSH_THEME="pi/pi"
+ZSH_THEME="pi"
+#ZSH_THEME="bira"
+#ZSH_THEME="muse"
+#ZSH_THEME="agnoster"
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -107,6 +109,23 @@ export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
 # shortcuts
 alias cleanproject='git reset --hard && git clean -f'
+alias rto='cd Documents/rails/RTO'
+alias testme='docker-compose run --rm app bundle exec rspec'
+alias console='docker-compose run --rm app bundle exec rails c'
+alias console2='docker-compose --project-name rto_rails2 run --rm app bundle exec ruby script/console'
+alias stats='git diff --stat'
+alias logstats='git log --stat'
+alias rebase='git rebase -i origin/develop'
+alias rebase2='git rebase -i origin/rails2'
+alias serverup='docker-compose up'
+alias serverupdebug='docker-compose run --service-ports app'
+alias serverup2='docker-compose --project-name rto_rails2 up'
+alias serverupdebug2='docker-compose --project-name rto_rails2 run --service-ports app'
+alias dockerun='docker-compose run --rm app'
+alias dockerun2='docker-compose --project-name rto_rails2 run --rm app'
+alias watchjohns='docker-compose run  --rm tools awslogs get /jssc-plus/johns-dev --watch'
+alias watchjohns3='docker-compose run  --rm tools awslogs get /jssc-plus/johns3-dev --watch'
 
 # servers
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+#export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
