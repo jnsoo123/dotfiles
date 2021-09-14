@@ -104,7 +104,9 @@ Plugin 'ayu-theme/ayu-vim'
 Plugin 'hzchirs/vim-material'
 Plugin 'micke/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
-
+Plugin 'connorholyday/vim-snazzy'
+Plugin 'tpope/vim-haml'
+Plugin 'rakr/vim-one'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,16 +126,15 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "set termguicolors
 "set background=dark " or light if you prefer the light version
 "let g:two_firewatch_italics=0
-"colo two-firewatch
-"
+"colorscheme two-firewatch
 "let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 " Firewatch Theme END
 
 " OneDark Theme START
-"let g:onedark_termcolors=16
+"let g:onedark_termcolors=256
 "set termguicolors
-"colorscheme onedark
 "set background=dark
+"colorscheme onedark
 "let g:airline_theme='onedark'
 " OneDark Theme END
 
@@ -150,19 +151,24 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
 
 " Palenlight Theme
-"set termguicolors
-"set background=dark
-"colorscheme palenight
-"let g:airline_theme='palenight'
-"" END
+set termguicolors
+set background=dark
+colorscheme palenight
+let g:airline_theme='palenight'
+""" END
 
 " Gruvbox
-set termguicolors
-colorscheme gruvbox
-set background=dark
-"let g:airline_theme='twofirewatch'
-let g:airline_theme='gruvbox'
+"set termguicolors
+"colorscheme gruvbox
+"set background=dark
+"let g:airline_theme='gruvbox'
 " End
+
+" Snazzy
+"set termguicolors
+"colorscheme snazzy
+"let g:airline_theme='luna'
+" END
 
 "Nord
 "colorscheme nord
@@ -172,7 +178,7 @@ let g:airline_theme='gruvbox'
 " Solarized Theme
 "syntax enable
 "set termguicolors
-"set background=dark
+"set background=light
 "colorscheme solarized
 "let g:airline_theme='luna'
 " END
@@ -185,12 +191,12 @@ let g:airline_theme='gruvbox'
 " End
 
 " Material Theme
-"gset termguicolors
-"gset background=dark
-"gsyntax enable
-"gcolorscheme material
-"glet g:material_theme_style='ocean'
-"glet g:airline_theme = 'material'
+"set termguicolors
+"set background=dark
+"syntax enable
+"colorscheme material
+"let g:material_theme_style='darker'
+"let g:airline_theme = 'material'
 " END
 
 " Monokai Theme
@@ -202,7 +208,15 @@ let g:airline_theme='gruvbox'
 "set t_Co=256   " This is may or may not needed.
 "set background=dark
 "colorscheme PaperColor
-"let g:airline_theme='luna'
+"let g:airline_theme='papercolor'
+" END
+
+" Vim-one
+"set termguicolors
+"colorscheme one
+"let g:one_allow_italics = 1
+"set background=light
+"let g:airline_theme='one'
 " END
 
 " Hybrid
@@ -218,6 +232,8 @@ let g:airline_theme='gruvbox'
 "let ayucolor='dark'
 "let ayucolor='mirage'
 "colorscheme ayu
+"let g:airline_theme='ayu'
+"let g:airline_theme='ayu_dark'
 " END
 
 " Material
@@ -230,13 +246,14 @@ let g:airline_theme='gruvbox'
 "highlight clear jsConditional
 "highlight clear jsReturn
 "highlight clear Comment
-" END
+"hi Comment guifg=#585B69
+"" END
 "set termguicolors
 "colorscheme rigel
 "let g:rigel_airline = 1
 "let g:airline_theme = 'rigel'
 
-"set cursorline
+set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE
 "highlight CursorLine ctermbg=Black
 " To ignore plugin indent changes, instead use:

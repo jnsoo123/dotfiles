@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/JSoo/.oh-my-zsh
+export ZSH=/Users/JSoo/.oh-my-zsh 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -11,10 +11,11 @@ export ZSH=/Users/JSoo/.oh-my-zsh
 #ZSH_THEME="rkj-repos"
 #ZSH_THEME="refined"
 #ZSH_THEME="pi/pi"
-ZSH_THEME="pi"
-#ZSH_THEME="bira"
-#ZSH_THEME="muse"
-#ZSH_THEME="agnoster"
+ZSH_THEME="pi" 
+#ZSH_THEME="bira" 
+#ZSH_THEME="muse" 
+#ZSH_THEME="agnoster" 
+#ZSH_THEME="spaceship" 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -125,7 +126,15 @@ alias dockerun='docker-compose run --rm app'
 alias dockerun2='docker-compose --project-name rto_rails2 run --rm app'
 alias watchjohns='docker-compose run  --rm tools awslogs get /jssc-plus/johns-dev --watch'
 alias watchjohns3='docker-compose run  --rm tools awslogs get /jssc-plus/johns3-dev --watch'
+alias nt='ping google.com'
+alias vimrc='vi ~/.vimrc' 
+alias zshrc='vi ~/.zshrc' 
 
 # servers
 #export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+#autoload -U promptinit; promptinit
+#prompt pure
+
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
