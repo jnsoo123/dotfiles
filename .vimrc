@@ -47,7 +47,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -107,6 +107,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'connorholyday/vim-snazzy'
 Plugin 'tpope/vim-haml'
 Plugin 'rakr/vim-one'
+Plugin 'dracula/vim'
+Plugin 'ghifarit53/tokyonight-vim'
+Plugin 'haishanh/night-owl.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,6 +123,23 @@ syntax enable
 let g:indentLine_setColors = 1
 let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" END
+
+" Hotline
+"set background=dark
+"colorscheme hotline
+" END
+
+" Tokyo Night
+"set termguicolors
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
+"colorscheme tokyonight
+" END
+
+" Night Owl
+"set termguicolors
+"colorscheme night-owl
 " END
 
 " Firewatch Theme START
@@ -151,10 +171,10 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
 
 " Palenlight Theme
-set termguicolors
-set background=dark
-colorscheme palenight
-let g:airline_theme='palenight'
+"set termguicolors
+"set background=dark
+"colorscheme palenight
+"let g:airline_theme='palenight'
 """ END
 
 " Gruvbox
@@ -171,14 +191,21 @@ let g:airline_theme='palenight'
 " END
 
 "Nord
-"colorscheme nord
-"let g:airline_theme='nord'
+set termguicolors
+colorscheme nord
+let g:airline_theme='nord'
+"end
+
+"Dracula
+"set termguicolors
+"colorscheme dracula
+"let g:airline_theme='dracula'
 "end
 
 " Solarized Theme
 "syntax enable
 "set termguicolors
-"set background=light
+"set background=dark
 "colorscheme solarized
 "let g:airline_theme='luna'
 " END
@@ -228,7 +255,7 @@ let g:airline_theme='palenight'
 
 " Ayu
 "set termguicolors
-"let ayucolor='light'
+""let ayucolor='light'
 "let ayucolor='dark'
 "let ayucolor='mirage'
 "colorscheme ayu
@@ -241,7 +268,7 @@ let g:airline_theme='palenight'
 "let g:material_style='oceanic'
 "set background=dark
 "colorscheme vim-material
-"let g:airline_theme='material'
+"let g:airline_theme='ayu'
 "highlight clear jsThis
 "highlight clear jsConditional
 "highlight clear jsReturn
@@ -256,6 +283,8 @@ let g:airline_theme='palenight'
 set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE
 "highlight CursorLine ctermbg=Black
+"hi CursorLine ctermbg=234 cterm=NONE guifg=NONE guibg=#202330 gui=NONE
+"hi LineNr ctermfg=grey guifg=#53545D
 " To ignore plugin indent changes, instead use:
 filetype plugin on
 " Brief help
@@ -268,9 +297,12 @@ filetype plugin on
 " Put your non-Plugin stuff after this line
 "set cursorline
 "let g:airline#extensions#tabline#enabled=1
+" Always show statusline
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+"set t_Co=256
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
-set laststatus=2
 "let g:airline_theme='badcat'
 
 let g:rspec_command = "Dispatch bin/rspec {spec}"
