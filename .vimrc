@@ -1,12 +1,16 @@
 let mapleader = ","
 set re=1
-nmap <Leader>f :FZF<cr>
+"nmap <Leader>f :FZF<cr>
+nmap <Leader>f <cmd>Telescope find_files<cr>
+nmap <Leader>g :LazyGit<cr>
+nmap <Leader>h :Gitsigns preview_hunk<cr>
+nmap <Leader>b <cmd>Telescope buffers<cr>
 nmap <Leader>w :w<cr>
 nmap <Leader>q :q<cr>
 nmap <Leader>v :vsplit<cr>
 nmap <Leader>e :e<cr>
 nmap <Leader>t :tabe<cr>
-nmap <Leader>n :NERDTree<cr>
+nmap <Leader>n :NvimTreeToggle<cr>
 nmap <Leader>/ :s/^/#/g<cr>
 nmap <Leader>\ :s/^//g<cr>
 map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -65,7 +69,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-projectionist'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
@@ -74,19 +78,19 @@ Plugin 'tpope/vim-surround'
 Plugin 'nelstrom/vim-mac-classic-theme'
 "Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter' " Git + - Signs
 Plugin 'pangloss/vim-javascript'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'rakr/vim-two-firewatch'
 Plugin 'trevordmiller/nova-vim'
 Plugin 'kaicataldo/material.vim'
 Plugin 'szorfein/fromthehell.vim'
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -108,8 +112,20 @@ Plugin 'connorholyday/vim-snazzy'
 Plugin 'tpope/vim-haml'
 Plugin 'rakr/vim-one'
 Plugin 'dracula/vim'
+"Plugin 'folke/tokyonight.nvim'
 Plugin 'ghifarit53/tokyonight-vim'
 Plugin 'haishanh/night-owl.vim'
+"Plugin 'itchyny/lightline.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-telescope/telescope-fzy-native.nvim'
+Plugin 'kdheepak/lazygit.nvim'
+Plugin 'lewis6991/gitsigns.nvim'
+Plugin 'lifepillar/vim-gruvbox8'
+Plugin 'kyazdani42/nvim-web-devicons' " for file icons
+Plugin 'kyazdani42/nvim-tree.lua'
+Plugin 'akinsho/bufferline.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,21 +136,34 @@ set expandtab
 syntax enable
 
 " For indentLine
-let g:indentLine_setColors = 1
-let g:indentLine_color_term = 239
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_setColors = 1
+"let g:indentLine_color_term = 239
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
 
 " Hotline
 "set background=dark
 "colorscheme hotline
 " END
+"
+" Tokyo Night Vim
+set termguicolors
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:lightline = {'colorscheme': 'tokyonight'}
+colorscheme tokyonight
+" END
 
-" Tokyo Night
-"set termguicolors
-"let g:tokyonight_style = 'night' " available: night, storm
-"let g:tokyonight_enable_italic = 1
+" Tokyo Night NeoVim
+"let g:tokyonight_style = 'storm'
+"let g:tokyonight_italic_functions = 1
+"let g:tokyonight_sidebars = ['qf', 'vista_kind', 'terminal', 'packer']
+"let g:tokyonight_colors = {
+"  \ 'hint': 'orange',
+"  \ 'error': '#ff0000'
+"\ }
 "colorscheme tokyonight
+"let g:lightline = {'colorscheme': 'tokyonight'}
 " END
 
 " Night Owl
@@ -179,9 +208,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " Gruvbox
 "set termguicolors
-"colorscheme gruvbox
+"colorscheme gruvbox8
 "set background=dark
-"let g:airline_theme='gruvbox'
+"let g:airline_theme='gruvbox8'
 " End
 
 " Snazzy
@@ -191,9 +220,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " END
 
 "Nord
-set termguicolors
-colorscheme nord
-let g:airline_theme='nord'
+"set termguicolors
+"colorscheme nord
+"let g:airline_theme='nord'
 "end
 
 "Dracula
