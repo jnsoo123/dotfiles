@@ -1,16 +1,17 @@
 let mapleader = ","
 set re=1
 "nmap <Leader>f :FZF<cr>
-nmap <Leader>f <cmd>Telescope find_files<cr>
+nmap <Leader>f <cmd>Telescope find_files theme=dropdown<cr>
 nmap <Leader>g :LazyGit<cr>
 nmap <Leader>h :Gitsigns preview_hunk<cr>
-nmap <Leader>b <cmd>Telescope buffers<cr>
+"nmap <Leader>b <cmd>Telescope buffers<cr>
+nmap <Leader>b :ToggleTerm size=10 direction=float<cr>
 nmap <Leader>w :w<cr>
-nmap <Leader>q :q<cr>
+nmap <Leader>q :bd<cr>
 nmap <Leader>v :vsplit<cr>
 nmap <Leader>e :e<cr>
 nmap <Leader>t :tabe<cr>
-nmap <Leader>n :NvimTreeToggle<cr>
+nmap <Leader>n <cmd>:NvimTreeToggle<cr>
 nmap <Leader>/ :s/^/#/g<cr>
 nmap <Leader>\ :s/^//g<cr>
 map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -92,7 +93,7 @@ Plugin 'kaicataldo/material.vim'
 Plugin 'szorfein/fromthehell.vim'
 "Plugin 'morhetz/gruvbox'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'arcticicestudio/nord-vim'
@@ -116,7 +117,6 @@ Plugin 'dracula/vim'
 Plugin 'ghifarit53/tokyonight-vim'
 Plugin 'haishanh/night-owl.vim'
 "Plugin 'itchyny/lightline.vim'
-Plugin 'mhinz/vim-startify'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-telescope/telescope-fzy-native.nvim'
@@ -126,6 +126,17 @@ Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'kyazdani42/nvim-web-devicons' " for file icons
 Plugin 'kyazdani42/nvim-tree.lua'
 Plugin 'akinsho/bufferline.nvim'
+Plugin 'nvim-lualine/lualine.nvim'
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plugin 'tree-sitter/tree-sitter-ruby'
+"Plugin 'projekt0n/github-nvim-theme'
+Plugin 'lukas-reineke/indent-blankline.nvim'
+"Plugin 'feline-nvim/feline.nvim'
+Plugin 'EdenEast/nightfox.nvim'
+Plugin 'akinsho/toggleterm.nvim'
+Plugin 'rebelot/kanagawa.nvim'
+Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -146,16 +157,38 @@ syntax enable
 "colorscheme hotline
 " END
 "
+" Github Theme
+" Example config in VimScript
+" NOTE: Configuration needs to be set BEFORE loading the color scheme with `colorscheme` command
+"let g:github_function_style = "italic"
+"let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+"let g:github_colors = {
+"  \ 'hint': 'orange',
+"  \ 'error': '#ff0000'
+"\ }
+"colorscheme github_dark
+" END
+"
+"NightFox Theme
+"colorscheme nightfox
+"END
+"
+" Catpuccin
+"set termguicolors
+"colorscheme catppuccin
+" END
+"
 " Tokyo Night Vim
 set termguicolors
-let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_style = 'storm'  "available: night, storm
 let g:tokyonight_enable_italic = 1
-let g:lightline = {'colorscheme': 'tokyonight'}
 colorscheme tokyonight
 " END
 
 " Tokyo Night NeoVim
-"let g:tokyonight_style = 'storm'
+"let g:tokyonight_style = 'night'
 "let g:tokyonight_italic_functions = 1
 "let g:tokyonight_sidebars = ['qf', 'vista_kind', 'terminal', 'packer']
 "let g:tokyonight_colors = {
@@ -165,7 +198,11 @@ colorscheme tokyonight
 "colorscheme tokyonight
 "let g:lightline = {'colorscheme': 'tokyonight'}
 " END
-
+" Kanagawa
+"set termguicolors
+"colorscheme kanagawa
+" END
+"
 " Night Owl
 "set termguicolors
 "colorscheme night-owl
@@ -308,6 +345,32 @@ colorscheme tokyonight
 "colorscheme rigel
 "let g:rigel_airline = 1
 "let g:airline_theme = 'rigel'
+"
+" indent-blankline options
+let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   }
+    \ }
 
 set cursorline
 "highlight CursorLine cterm=underline ctermbg=NONE
@@ -327,7 +390,7 @@ filetype plugin on
 "set cursorline
 "let g:airline#extensions#tabline#enabled=1
 " Always show statusline
-set laststatus=2
+set laststatus=3
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 "set t_Co=256
 let g:airline_powerline_fonts=1
